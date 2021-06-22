@@ -24,7 +24,10 @@
     "build": "npm-run-all --serial clean generate build:**"
   },
   "author": "y-hiraoka",
-  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/y-hiraoka/prismjs-components-importer"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "prismjs": "1.23.0"
   },

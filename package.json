@@ -2,8 +2,8 @@
   "name": "prismjs-components-importer",
   "version": "0.0.0",
   "description": "You can import prismjs/components without considering language dependencies.",
-  "main": "dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "cjs/index.js",
+  "module": "./esm/index.js",
   "keywords": [
     "prismjs",
     "import",
@@ -13,10 +13,11 @@
     "cjs"
   ],
   "files": [
-    "dist"
+    "cjs",
+    "esm"
   ],
   "scripts": {
-    "clean": "rimraf dist && rimraf src",
+    "clean": "rimraf cjs && rimraf esm && rimraf src",
     "generate": "ts-node --files generate.ts",
     "build:esm": "tsc --build tsconfig.esm.json",
     "build:cjs": "tsc --build tsconfig.cjs.json",

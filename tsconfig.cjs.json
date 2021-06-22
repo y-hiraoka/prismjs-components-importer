@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "CommonJS",
     "rootDir": "src",
-    "outDir": "./dist/cjs",
+    "outDir": "./cjs",
     "strict": true,
     "moduleResolution": "node",
     "declaration": true,

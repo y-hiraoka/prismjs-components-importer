@@ -1,25 +1,37 @@
 {
-  "name": "prismjs-es-modules",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "prismjs-components-importer",
+  "version": "0.0.0",
+  "description": "You can import prismjs/components without considering language dependencies.",
+  "main": "dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "keywords": [
+    "prismjs",
+    "import",
+    "esmodules",
+    "commonjs",
+    "esm",
+    "cjs"
+  ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf dist && rimraf src",
     "generate": "ts-node --files generate.ts",
-    "build:esm": "npx tsc --build tsconfig.esm.json",
-    "build:cjs": "npx tsc --build tsconfig.cjs.json",
+    "build:esm": "tsc --build tsconfig.esm.json",
+    "build:cjs": "tsc --build tsconfig.cjs.json",
     "build": "npm-run-all --serial clean generate build:**"
   },
-  "keywords": [],
   "author": "y-hiraoka",
   "license": "ISC",
-  "dependencies": {
-    "@types/node": "^15.12.4",
-    "prismjs": "^1.23.0"
+  "peerDependencies": {
+    "prismjs": "1.23.0"
   },
   "devDependencies": {
+    "@types/node": "^15.12.4",
     "@types/prismjs": "^1.16.5",
     "npm-run-all": "^4.1.5",
+    "prismjs": "^1.23.0",
     "rimraf": "^3.0.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.4"

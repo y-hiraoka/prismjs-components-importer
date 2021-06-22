@@ -14,7 +14,9 @@ for (const languageId in languages) {
     const element = languages[languageId];
 
     if (Array.isArray(element.require)) {
-      sourceCodeBase.push(...element.require.map((lang) => `import "./prism-${lang}"`));
+      sourceCodeBase.push(
+        ...element.require.map(lang => `import "./prism-${lang}"`),
+      );
     } else if (typeof element.require === "string") {
       sourceCodeBase.push(`import "./prism-${element.require}"`);
     }
@@ -30,5 +32,5 @@ for (const languageId in languages) {
 
 fs.writeFileSync(
   path.resolve("src/index.ts"),
-  forIndexFile.map((filename) => `import "./${filename}"`).join("\n")
+  forIndexFile.map(filename => `import "./${filename}"`).join("\n"),
 );

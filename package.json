@@ -21,7 +21,9 @@
     "generate": "ts-node --files generate.ts",
     "build:esm": "tsc --build tsconfig.esm.json",
     "build:cjs": "tsc --build tsconfig.cjs.json",
-    "build": "npm-run-all --serial clean generate build:**"
+    "build": "npm-run-all --serial clean generate build:**",
+    "format": "prettier --write '**/*.{js,ts,json}'",
+    "prepare": "husky install"
   },
   "author": "y-hiraoka",
   "repository": {
@@ -34,10 +36,16 @@
   "devDependencies": {
     "@types/node": "^15.12.4",
     "@types/prismjs": "^1.16.5",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.1",
     "prismjs": "^1.23.0",
     "rimraf": "^3.0.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": "prettier --write"
   }
 }

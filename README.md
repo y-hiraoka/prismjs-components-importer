@@ -46,6 +46,12 @@ Also, if you want to load all the language definitions, you can do so by simply 
 import "prismjs-components-importer/esm";
 ```
 
+## Install
+
+```
+npm install prismjs-components-importer
+```
+
 ## Usage examples
 
 Import a specific language definition with CommonJS:
